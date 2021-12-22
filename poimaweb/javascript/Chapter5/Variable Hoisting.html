@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+    //자바스크립트에서는 var키워드로 선언된 변수가 선언단계와 초기화단계가 한번에 이루어짐.
+    //스코프에 변수가등록되고 변수는 메모리에 공간을 확보한후 undefined로 초기화 되어있음. 이것이 변수 호이스팅.
+
+    console.log(foo);//foo is not defined가 아닌 undefined가 출력됨
+    var foo=123;
+    console.log(foo);//123
+    {
+        let foo = 456;
+        console.log(foo);
+        foo=789;
+        console.log(foo);
+    }
+    console.log(foo);
+
+    //함수 레벨 스코프 : 함수내에서 선언한변수만 지역변수 함수외부에 선언한 변수 모두 전역변수 --> var
+    //블록 레벨 스코프 : 코드 블록 내에서 선언된 변수는 블록 내에서만 유효하며 코드블록 외부에서는 참조할 수 없다.-->let,const
+
+    //var변수를 통해 전역변수가 무분별하게 많이 사용되어 생기는 문제가 많아짐. ES6는 var의 단점을 보완하기위해 let,const키워드 도입.
+
+</script>    
+</body>
+</html>
