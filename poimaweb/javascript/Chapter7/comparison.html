@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+    // ==  동등비교 : x와 y의 값이 같음 -> 암묵적 타입변환 후 같은 값을 같는지 비교한다.
+    //                                 -> 예측하기 힘든 결과들을 만듬 ===을 사용하자.    
+    console.log(5==5);//true
+    console.log(5=='5');//true
+    console.log(''=='0');//false
+    console.log(0=='');//true
+    console.log(0=='0');//true
+    console.log(false=='false');//false
+    console.log(false=='0');//true
+
+    // === 일치비교 : x와 y의 값과 타입이 같음 
+    console.log(5===5);//true
+    console.log(5==='5');//false
+
+    console.log(NaN===NaN);//false ->자신과 일치하지않는 유일한 값 NaN isNaN사용.
+    console.log(isNaN(NaN));
+    
+    // !=  부등 비교 : x와 y의 값이 다름
+    // !== 불일치 비교 : x와 y의 값과 타입이 다름
+</script>    
+</body>
+</html>

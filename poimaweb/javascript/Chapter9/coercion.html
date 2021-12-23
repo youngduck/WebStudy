@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+    //암묵적 타입변환시 +(문자열 연결 연산자)는 문자열로변환, +(단항연산자)-,*,/,>는 숫자 타입으로 변환
+    0+''//"0"
+    NaN+''//"NaN"
+    true+''//"true"
+
+    1-'1'//0
+    1*'10'//10
+    '1'>0//true
+
+    +'0'//0
+    +true//1
+    +undefined//NaN
+    +null//0
+    +{}//NaN
+    +[]//0
+    +[10,20]//NaN
+
+    //문자열 변환 String(),toString(),문자열연결연산자(+)
+    //숫자 변환 Number(),parseInt(),parseFloat(),산술연산자,단항연산자(+)
+    //boolean 변환 Boolean(),!!사용.
+</script>    
+</body>
+</html>

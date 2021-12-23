@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+    //foo라는 레이블 식별자가 붙은 레이블 문
+    foo:console.log('foo');
+    //레이블 문은 실행순서를 제어하기 위해 사용한다. switch문의 case와default문도 레이블문이다.
+    foo:{
+        console.log(1);
+        break foo;
+        console.log(2);
+    }
+    //이중포문에서 한번에 외부 for문 밖으로 나갈때 사용.
+    outer:{
+        for(var i = 0; i<3;i++){
+            for(var j = 0; j<3;j++){
+                console.log(i,j);
+                if(i+j===3)
+                    break outer;
+            }
+        }
+    }
+</script>    
+</body>
+</html>
