@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+    //object type  -> Pass by reference
+    var foo ={val:10};
+    var boo = foo;
+    foo.var=20;
+    console.log(foo.var,boo.var);//20,20
+    console.log(foo===boo);
+    //원시 type -> Pass by value 
+    var a = 1;
+    var b = a;
+
+    a=10;
+    console.log(a,b);//10,1
+    console.log(a===b);
+</script>    
+</body>
+</html>
