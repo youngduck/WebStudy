@@ -4,9 +4,12 @@ body{
 table{
     background-color: white;
     border-collapse:collapse;
-    border-radius: 20px;
     height: 500px;
     width: 300px;
+    border-radius: 10px;
+    border-style: hidden;
+    box-shadow: 0 0 0  5px black;
+
 }
 
 td{
@@ -15,9 +18,11 @@ td{
 
 input{
     font-size: 30px;
+    color: skyblue;
     text-align: right;
     border: none;
 }
+
 
 input:focus{
     outline: none;
