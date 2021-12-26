@@ -1,0 +1,24 @@
+body{
+    background-color: skyblue;
+}
+table{
+    background-color: white;
+    border-collapse:collapse;
+    border-radius: 20px;
+    height: 500px;
+    width: 300px;
+}
+
+td{
+    text-align:center;
+}
+
+input{
+    font-size: 30px;
+    text-align: right;
+    border: none;
+}
+
+input:focus{
+    outline: none;
+}
