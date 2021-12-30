@@ -87,7 +87,7 @@ address:{
 
 Object.freeze(user);
 
-user.name='kim'//변경안된다.
+user.name='kim';//변경안된다.
 user.address.city='busan';//변경된다.
 console.log(user);//{name:Lee,address:{city:'busan'}}
 ```
