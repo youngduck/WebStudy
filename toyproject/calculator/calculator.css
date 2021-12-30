@@ -2,6 +2,7 @@ body{
     background-color: skyblue;
 }
 table{
+    border-color: red;
     background-color: white;
     border-collapse:collapse;
     height: 500px;

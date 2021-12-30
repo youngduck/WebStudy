@@ -15,6 +15,6 @@ Chapter9 [타입 변환과 단축 평가](https://github.com/youngduck/WebStudy/
 
 Chapter10 [객체](https://github.com/youngduck/WebStudy/blob/main/poimaweb/javascript/Chapter10/Chapter10.md)
 
-Chapter11 [객체와 변경 불가성](https://github.com/youngduck/WebStudy/blob/main/poimaweb/javascript/Chapter11/Chapter11.md)
+Chapter11 [객체와 변경 불가성](https://github.com/youngduck/WebStudy/blob/main/poimaweb/javascript/Chapter11/README.md)
 
 <hr>
