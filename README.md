@@ -17,4 +17,5 @@ Chapter10 [객체](https://github.com/youngduck/WebStudy/blob/main/poimaweb/java
 
 Chapter11 [객체와 변경 불가성](https://github.com/youngduck/WebStudy/blob/main/poimaweb/javascript/Chapter11/README.md)
 
+Chpater12 [함수](https://github.com/youngduck/WebStudy/blob/main/poimaweb/javascript/Chapter12/README.md)
 <hr>
