@@ -21,4 +21,5 @@ Chpater12 [함수](https://github.com/youngduck/WebStudy/blob/main/poimaweb/java
 
 Chpater14 [프로토타입](https://github.com/youngduck/WebStudy/blob/main/poimaweb/javascript/Chapter14/README.md)
 
+Chpater15 [스코프](https://github.com/youngduck/WebStudy/blob/main/poimaweb/javascript/Chapter15/README.md)
 <hr>
