@@ -1,0 +1,8 @@
+.box {
+  font-size: 50px;
+}
+
+.box.border-box {
+  border: 10px solid red;
+}
+/*# sourceMappingURL=pra.css.map */

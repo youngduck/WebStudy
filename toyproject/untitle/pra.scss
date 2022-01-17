@@ -1,0 +1,6 @@
+.box{
+    font-size: 50px;
+    &.border-box{
+        border:10px solid red;
+    }
+}
