@@ -304,5 +304,5 @@ var a = new A(100);
 var b = A(10);
 
 console.log(a.value);
-console.log(b.value);
+console.log(b.value);d
 ```
