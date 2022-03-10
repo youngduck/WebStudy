@@ -9,7 +9,59 @@
   const $todos = get('.todos')
   const $form = get('.todo_form')
   const $todoInput = get('.todo_input')
+  const $pagination = get('.pagination')
+
+  //pagenation변수
+  const limit = 5
+  let currentPage = 1
+  const totalCount = 53
+  const pageCount = 5
   
+  const pagination = () => {
+    let totalPage = Math.ceil(totalCount / limit)
+    let pageGroup = Math.ceil(currentPage / pageCount)
+    let lastNumber = pageGroup * pageCount
+    if (lastNumber > totalPage) {
+      lastNumber = totalPage
+    }
+    let firstNumber = lastNumber - (pageCount - 1)
+
+    const next = lastNumber + 1
+    const prev = firstNumber - 1
+
+    let html = ''
+
+    if (prev > 0) {
+      html += "<button class='prev' data-fn='prev'>이전</button> "
+    }
+
+    for (let i = firstNumber; i <= lastNumber; i++) {
+      html += `<button class="pageNumber" id="page_${i}">${i}</button>`
+    }
+    if (lastNumber < totalPage) {
+      html += `<button class='next' data-fn='next'>다음</button>`
+    }
+
+    $pagination.innerHTML = html
+    const $currentPageNumber = get(`.pageNumber#page_${currentPage}`)
+    $currentPageNumber.style.color = '#9dc0e8'
+
+    const $currentPageNumbers = document.querySelectorAll(`.pagination button`)
+    $currentPageNumbers.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (button.dataset.fn === 'prev') {
+          currentPage = prev
+        } else if (button.dataset.fn === 'next') {
+          currentPage = next
+        } else {
+          currentPage = button.innerText
+        }
+        pagination()
+        getTodos()
+      })
+    })
+  }
+
 
   const createTodoElement = (item) => {
     const { id, content,completed } = item
@@ -56,7 +108,7 @@
   }
 
   const getTodos=()=>{
-    fetch(API_URL)
+    fetch(`${API_URL}?_page=${currentPage}&_limit=${limit}`)
     .then((response)=>response.json())
     .then((todos)=>renderAllTodos(todos))
     .catch((error)=>console.error(error))
@@ -155,6 +207,7 @@
   const init = () => {
     window.addEventListener('DOMContentLoaded',()=>{
       getTodos()
+      pagination()
     })
     $form.addEventListener('submit',addTodo)
     $todos.addEventListener('click',toggleTodo)
