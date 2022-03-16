@@ -12,7 +12,7 @@ const init = ()=>{
 }
 
 const baseball = {
-    limit:10,
+    limit:7,
     digit:4,
     trial:0,
     end:false,
@@ -125,7 +125,7 @@ const playGame = (event) =>{
     if(limit<=trial && !isCorrect(inputNumber,password)){
         alert('아웃ㅋ')
         end = true
-        $answer.innerHTML=password
+        $answer.innerHTML=baseball.password
     }
 
     $input.value=''
