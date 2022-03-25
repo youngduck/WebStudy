@@ -1,0 +1,41 @@
+header{
+    z-index: 55;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    .progress-container{
+        width: 100%;
+        height: 8px;
+        background: #c6c6c6;
+    }
+    .progress-bar{
+        height: 8px;
+        background:#ff9800;
+    }
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    font-size: 50px;
+    background-color: black;
+    color: white;
+    flex-wrap: wrap;
+    ul{
+        float: right;
+        display: flex;
+        li{
+            margin-top: 15px;
+            margin-right: 10px;
+            font-size: 20px;
+            
+        }
+    }
+}
+
+img{
+    padding: 1px 0;
+    display: block;
+}
+    
