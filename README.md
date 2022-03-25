@@ -17,6 +17,9 @@
 ### 키값에따른 반응형 웹만들기
 ![](./cloneCoding/Drum/assets/images/result.jpg)
 
+## 스로틀을활용한 프로그레스바 만들기
+![](./cloneCoding/progressbar/assets/images/result1.PNG)
+![](./cloneCoding/progressbar/assets/images/result2.PNG)
 
 # toyProject
 ## schoolSeatData 크롤링
