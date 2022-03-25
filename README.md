@@ -18,6 +18,9 @@
 ## 스로틀을활용한 프로그레스바 만들기
 ![](./cloneCoding/progressbar/assets/images/result.gif)
 
+## fetchAPI,pagenation 활용한 무한스크롤 웹만들기
+![](./cloneCoding/infinityScroll/assets/images/result.gif)
+
 # toyProject
 ## schoolSeatData 크롤링
 ### 학교도서관 좌석정보 크롤링 후 좌석사용여부 건네주기
