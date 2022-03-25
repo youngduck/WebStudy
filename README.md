@@ -6,20 +6,17 @@
 
 ## naverOrder
 ### html,scss&css 활용한 마크업
-![](./cloneCoding/NaverOrder/result/naverOrderMain.PNG)
-![](./cloneCoding/NaverOrder/result/naverOrderdetail.PNG)
-![](./cloneCoding/NaverOrder/result/naverOrderOrder.PNG)
+![](./cloneCoding/NaverOrder/result/result.gif)
 
 ## 숫자야구
-![](./cloneCoding/bulls%20and%20cows/result/result.PNG)
+![](./cloneCoding/bulls%20and%20cows/assets/images/result.gif)
 
 ## 드럼만들기
 ### 키값에따른 반응형 웹만들기
-![](./cloneCoding/Drum/assets/images/result.jpg)
+![](./cloneCoding/Drum/assets/images/result.gif)
 
 ## 스로틀을활용한 프로그레스바 만들기
-![](./cloneCoding/progressbar/assets/images/result1.PNG)
-![](./cloneCoding/progressbar/assets/images/result2.PNG)
+![](./cloneCoding/progressbar/assets/images/result.gif)
 
 # toyProject
 ## schoolSeatData 크롤링
