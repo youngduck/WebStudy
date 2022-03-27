@@ -21,6 +21,9 @@
 ## fetchAPI,pagenation 활용한 무한스크롤 웹만들기
 ![](./cloneCoding/infinityScroll/assets/images/result.gif)
 
+## 캐러셀 만들기
+![](./cloneCoding/carousel/assets/images/result.gif)
+
 # toyProject
 ## schoolSeatData 크롤링
 ### 학교도서관 좌석정보 크롤링 후 좌석사용여부 건네주기

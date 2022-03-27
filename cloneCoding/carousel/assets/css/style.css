@@ -1,0 +1,107 @@
+body {
+  background-color: black;
+}
+
+.container header {
+  color: yellow;
+  font-size: 3rem;
+  text-align: center;
+  margin: 10px;
+}
+
+.container .carousel-wrapper {
+  overflow: hidden;
+  margin: auto;
+}
+
+.container .carousel-wrapper * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container .carousel {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.container .carousel_item {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 640px;
+  height: 400px;
+  margin: auto;
+  padding: 1rem 4rem;
+  z-index: 100;
+  -webkit-transition: opacity 0.5s,z-index 0.5s,-webkit-transform 0.5s;
+  transition: opacity 0.5s,z-index 0.5s,-webkit-transform 0.5s;
+  transition: transform 0.5s,opacity 0.5s,z-index 0.5s;
+  transition: transform 0.5s,opacity 0.5s,z-index 0.5s,-webkit-transform 0.5s;
+}
+
+.container .carousel_item.active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+}
+
+.container .carousel_item.prev,
+.container .carousel_item.next {
+  z-index: 800;
+}
+
+.container .carousel_item.prev {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.container .carousel_item.next {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.container .carousel_button--prev,
+.container .carousel_button--next {
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  border: 1px solid black;
+}
+
+.container .carousel_button--prev {
+  left: 0;
+}
+
+.container .carousel_button--next {
+  right: 0;
+}
+
+.container .carousel_button--prev::after,
+.container .carousel_button--next::after {
+  content: ' ';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 54%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  -webkit-transform: translate(-50%, -50%) rotate(135deg);
+          transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.container .carousel_button--next::after {
+  left: 47%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
