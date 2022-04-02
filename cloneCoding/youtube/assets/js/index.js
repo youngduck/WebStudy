@@ -1,77 +1,189 @@
-const get = (target)=>{
-    return document.querySelector(target)
-}
+const get = (target)=> document.querySelector(target)
+const getAll = (target) => document.querySelectorAll(target)
 
-let currentPage = 1
-let total = 10
-const limit = 10
-const end = 100
+const $search = get('#search')
+const $list = getAll('.contents.list figure')
+const $searchButton = get('.btn_search')
 
-const $posts = get('.posts')
-const $loader = get('.loader')
+const $player = get('.view video')
+const $btnPlay = get('.js-play')
+const $btnReplay = get('.js-replay')
+const $btnStop = get('.js-stop')
+const $btnMute = get('.js-mute')
+const $progress = get('.js-progress')
+const $volume = get('.js-volume')
+const $fullScreen = get('.js-fullScreen')
 
-const hideLoader = () => {
-    $loader.classList.remove('show')
-}
-
-const showLoader = () => {
-    $loader.classList.add('show')
-}
-
-const showPosts = (posts)=>{
-    posts.forEach((post)=>{
-        const $post = document.createElement('div')
-        $post.classList.add('post')
-        $post.innerHTML=`
-        <div class="header">
-          <div class="id">${post.id}.</div>
-          <div class="title">${post.title}</div>
-        </div>
-        <div class="body">${post.body}</div>
-    `
-        $posts.appendChild($post)
+const init = ()=>{
+    $search.addEventListener('keyup',search)
+    $searchButton.addEventListener('click',search)
+    for(let index = 0; index<$list.length; index++){
+        const $target = $list[index].querySelector('picture')
+        $target.addEventListener('mouseover',onMouseOver)
+        $target.addEventListener('mouseout',onMouseOut)
+    }
+    for(let index = 0; index<$list.length;index++){
+        $list[index].addEventListener('click',hashChange)
+    }
+    window.addEventListener('hashchange',()=>{
+        const isView = -1<window.hash.indexOf('view')
+        if(isView){
+            getViewPage()
+        }else{
+            getListPage()
+        }
     })
-
+    viewPageEvent()
 }
 
-const getPosts = async(page,limit)=>{
-    const API_URL = `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`
-    const response = await fetch(API_URL)
-    if(!response.ok){
-        throw new Error('에러가 발생했습니다.')
-    }
-    return await response.json()
-}
-
-const loadPosts= async (page,limit)=>{
-    showLoader()
-    try {
-        const response = await getPosts(page,limit)
-        showPosts(response)
-    } catch (error){
-        console.error(error.message)
-    } finally {
-        hideLoader()
-    }
-} 
-
-const handleScroll = ()=>{
-    const {scrollTop,scrollHeight,clientHeight} = document.documentElement
-
-    if(total === end){
-        window.removeEventListener('scroll',handleScroll)
-        return
-    }
-
-    if(scrollTop+clientHeight>=scrollHeight-5){
-        currentPage++
-        total+=10
-        loadPosts(currentPage,limit)
-        return
+const search =()=>{
+    let serchText = $search.value.toLowerCase()
+    for(let index = 0; index<$list.length; index++){
+        const $target = $list[index].querySelector('strong')
+        const text = $target.textContent.toLowerCase()
+        if(-1<text.indexOf(serchText)){
+            $list[index].style.display='flex'
+        }
+        else{
+            $list[index].style.display='none'
+        }
     }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    loadPosts(currentPage, limit)
-    window.addEventListener('scroll', handleScroll)
-  })
+const onMouseOver = (e) => {
+    const webpPlay = e.target.parentNode.querySelector('source')
+    webpPlay.setAttribute('srcset', '../assets/images/sample.webp')
+  }
+
+const onMouseOut = (e) => {
+    const webpPlay = e.target.parentNode.querySelector('source')
+    webpPlay.setAttribute('srcset', '../assets/images/sample.jpg')
+}
+
+const hashChange = (e)=>{
+    e.preventDefault()
+    const parentNode = e.target.closest('figure')
+    viewTitle = parentNode.querySelector('strong').textContent
+    window.location.hash=`view&${viewTitle}`
+    getViewPage()
+}
+
+const getViewPage = ()=>{
+    const viewTitle = get('.view strong')
+    const urlTitle = decodeURI(window.location.hash.split('&')[1])
+    viewTitle.innerText = urlTitle
+    
+    get('.list').style.display='none'
+    get('.view').style.display='flex'
+}
+
+const getListPage = ()=>{
+    get('.list').style.display='flex'
+    get('.view').style.display='none'
+}
+
+const buttonChange=(btn,value)=>{
+    btn.innerHTML=value;
+}
+
+const viewPageEvent=()=>{
+    $volume.addEventListener('change',(e)=>{
+        $player.volume=e.target.value;
+    })
+    $player.addEventListener('timeupdate',setProgress)
+    $player.addEventListener('play',buttonChange($btnPlay,'pause'))
+    $player.addEventListener('pause',buttonChange($btnPlay,'play'))
+    $player.addEventListener('volumechange',()=>{
+        $player.muted? buttonChange($btnMute,'unmute'):buttonChange($btnMute,'mute')
+    })
+    $player.addEventListener('ended',$player.pause())
+    $player.addEventListener('click',getCurrent)
+    
+    $btnPlay.addEventListener('click',playVideo)
+    $btnReplay.addEventListener('click', replayVideo)
+    $btnStop.addEventListener('click', stopVideo)
+    $btnMute.addEventListener('click', mute)
+    $fullScreen.addEventListener('click', fullScreen)
+}
+
+const getCurrent = (e)=>{
+    let percent = e.offsetX/$progress.offsetWidth
+    $player.currentTime = percent*$player.duration
+    e.target.value = Math.floor(percent/100)
+}
+
+const setProgress = ()=>{
+    let percentage = Math.floor((100/$player.duration)*$player.currentTime)
+    $progress.value = percentage
+}
+
+const playVideo = () => {
+    if ($player.paused || $player.ended) {
+      buttonChange($btnPlay, 'pause')
+      $player.play()
+    } else {
+      buttonChange($btnPlay, 'play')
+      $player.pause()
+    }
+  }
+
+  const stopVideo = () => {
+    $player.pause()
+    $player.currentTime = 0
+    buttonChange($btnPlay, 'play')
+  }
+
+  const resetPlayer = () => {
+    $progress.value = 0
+    $player.currentTime = 0
+    buttonChange($btnPlay, 'play')
+  }
+
+  const replayVideo = () => {
+    resetPlayer()
+    $player.play()
+    buttonChange($btnPlay, 'pause')
+  }
+
+  const mute = () => {
+    if ($player.muted) {
+      buttonChange($btnMute, 'mute')
+      $player.muted = false
+    } else {
+      buttonChange($btnMute, 'unmute')
+      $player.muted = true
+    }
+  }
+
+  const fullScreen = () => {
+    if ($player.requestFullscreen)
+      if (document.fullScreenElement) {
+        document.cancelFullScreen()
+      } else {
+        $player.requestFullscreen()
+      }
+    else if ($player.msRequestFullscreen)
+      if (document.msFullscreenElement) {
+        document.msExitFullscreen()
+      } else {
+        $player.msRequestFullscreen()
+      }
+    else if ($player.mozRequestFullScreen)
+      if (document.mozFullScreenElement) {
+        document.mozCancelFullScreen()
+      } else {
+        $player.mozRequestFullScreen()
+      }
+    else if ($player.webkitRequestFullscreen)
+      if (document.webkitFullscreenElement) {
+        document.webkitCancelFullScreen()
+      } else {
+        $player.webkitRequestFullscreen()
+      }
+    else {
+      alert('Not Supported')
+    }
+  }
+  
+  
+init()

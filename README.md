@@ -24,6 +24,10 @@
 ## 캐러셀 만들기
 ![](./cloneCoding/carousel/assets/images/result.gif)
 
+## 유튜브 만들기
+![](./cloneCoding/youtube/assets/images/result.gif)
+
+
 # toyProject
 ## schoolSeatData 크롤링
 ### 학교도서관 좌석정보 크롤링 후 좌석사용여부 건네주기
