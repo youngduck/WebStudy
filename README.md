@@ -1,8 +1,7 @@
 # cloneCoding 결과물
 ## toDoList
 ### pagenation,fetch,json-server활용
-![](./cloneCoding/toDoList/result/toDoList.PNG)
-![](./cloneCoding/toDoList/result/toDoList2.PNG)
+![](./cloneCoding/toDoList/assets/images/result.gif)
 
 ## naverOrder
 ### html,scss&css 활용한 마크업
