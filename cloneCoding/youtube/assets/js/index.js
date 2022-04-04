@@ -26,7 +26,7 @@ const init = ()=>{
         $list[index].addEventListener('click',hashChange)
     }
     window.addEventListener('hashchange',()=>{
-        const isView = -1<window.hash.indexOf('view')
+        const isView = -1<window.hash.location.indexOf('view')
         if(isView){
             getViewPage()
         }else{
