@@ -1,0 +1,208 @@
+body,
+html {
+  box-sizing: border-box;
+  font-family: "Gowun Batang", serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-color: #cbaacb;
+  overflow:scroll;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0px;
+  padding: 0px;
+}
+.header {
+  width: 100vw;
+  height: 20vh;
+  margin: 0px;
+  color: white;
+  text-align: center;
+  font-size: 1.5vw;
+  display: table-cell;
+  vertical-align: middle;
+}
+.a {
+  width: 100vw;
+  height: 70vh;
+  display: grid;
+  margin: 0px;
+  grid-template-columns: 40% 60%;
+  background-color: #97c1a9;
+  box-sizing: border-box;
+}
+.button1 {
+  float: right;
+}
+.nav {
+  overflow: hidden;
+  margin: 40px 150px 40px 20px;
+}
+/* 탭 스타일 */
+.tab_item {
+  width: 25%;
+  height: 15%;
+  background-color: #ff0071;
+  font-size: 1.5vw;
+  text-align: center;
+  color: white;
+  float: left;
+  font-size: 2vw;
+  font-weight: bold;
+  transition: all 0s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.tab_item:hover {
+  opacity: 0.5;
+}
+
+/* 라디오 버튼 UI삭제*/
+input[name="tab_item"] {
+  display: none;
+}
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+  height: 85%;
+  display: none;
+  clear: both;
+  background-color: #ffffb5;
+  border-radius: 60px;
+  border: solid #ffffb5 50px;
+  box-sizing: border-box;
+  font-size: 15px;
+  line-height: 28px;
+}
+/* 선택 된 탭 콘텐츠를 표시 */
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content,
+#designn:checked ~ #designn_content {
+  display: block;
+  overflow: scroll;
+}
+/* 선택된 탭 스타일 */
+.tabs input:checked + .tab_item {
+  background-color: #ffffb5;
+  color: black;
+}
+.footer {
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+  padding: auto;
+  font-size: 2vw;
+  display: table-cell;
+  vertical-align: middle;
+}
+.slider {
+  position: relative;
+  background-color: orange;
+  margin: 40px 20px 40px 150px;
+  overflow: hidden;
+}
+.slider input[type="radio"] {
+  display: none;
+}
+ul.imgs {
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+ul.imgs li {
+  position: absolute;
+  left: 100px;
+  transition-delay: 0.5s;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+   width:auto;
+  background-size: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  height: 100%;
+  width:auto;
+  opacity:80%;
+  background-size: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bullets {
+  position:absolute;
+  bottom: 20px;
+  z-index: 2;
+}
+.bullets label {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #55cbcd;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+
+
+.slider
+  input[type="radio"]:nth-child(1):checked
+  ~ .bullets
+  > label:nth-child(1) {
+  background-color: #ff0071;
+}
+.slider
+  input[type="radio"]:nth-child(2):checked
+  ~ .bullets
+  > label:nth-child(2) {
+  background-color: #ff0071;
+}
+.slider
+  input[type="radio"]:nth-child(3):checked
+  ~ .bullets
+  > label:nth-child(3) {
+  background-color: #ff0071;
+}
+.slider
+  input[type="radio"]:nth-child(4):checked
+  ~ .bullets
+  > label:nth-child(4) {
+  background-color: #ff0071;
+}
+.slider input[type="radio"]:nth-child(1):checked ~ ul.imgs > li:nth-child(1) {
+  left:0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.slider input[type="radio"]:nth-child(2):checked ~ ul.imgs > li:nth-child(2) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.slider input[type="radio"]:nth-child(3):checked ~ ul.imgs > li:nth-child(3) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.slider input[type="radio"]:nth-child(4):checked ~ ul.imgs > li:nth-child(4) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}

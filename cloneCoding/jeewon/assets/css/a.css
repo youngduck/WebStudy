@@ -1,0 +1,14 @@
+ 
+.ab{
+    fill: red;
+}
+.ac{
+    fill: blue;
+}
+
+#jungnang:hover{
+    fill: black;
+}
+#jungnang:hover+.ac{
+    fill: black;
+}
