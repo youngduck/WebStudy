@@ -1,4 +1,100 @@
+body,
+html {
+  box-sizing: border-box;
+  font-family: "Gowun Batang", serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-size: cover;
+  display: grid;
+  grid-template-rows: 20% 80%;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
 
-	.st0{fill:#FFFFFF;}
-	.st1{font-family:'AdobeMyungjoStd-Medium-KSCpc-EUC-H';}
-	.st2{font-size:12px;}
+.header {
+  background-color: orange;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
+}
+.box {
+  background-color: pink;
+}
+.box svg {
+  transform: scale(1) translate(0px, 0px);
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: -20px, -20px, -20px, -20px;
+}
+
+.gajuknamu {
+  fill: #ffffb5;
+}
+.gamnamu {
+  fill: #abdee6;
+}
+.suyangbudeul {
+  fill: #abdee6;
+}
+.yangbeozeumnamu {
+  fill: #fed592;
+}
+.chillyeopsu {
+  fill: #a2e1db;
+}
+.tulipnamu {
+  fill: #ffffb5;
+}
+.mongnyeon {
+  fill: #ff0071;
+}
+.metasequoia {
+  fill: #cbaacb;
+}
+.eundanpungnamu {
+  fill: #FF2358;
+}
+.eunhangnamu {
+  fill: #FFD500;
+   transition: 1s;
+}
+.eunhangnamu:hover {
+  fill: red;
+}
+.hwehwanamu {
+  fill: #55f4b5;
+}
+.sonamu {
+  fill: #97c1a9;
+}
+.mugunghwa {
+  fill: #55f4b5;
+}
+.neutinamu {
+  fill: #55cbcd;
+}
+.wangbudnamu {
+  fill: #97c1a9;
+}
+.ipapnamu {
+  fill: #55dae6;
+}
+.nereupnamu {
+  fill: #ff7558;
+}
+.populusnamu {
+  fill: #ff0071;
+}
+.salgunamu {
+  fill: #fee1e8;
+}

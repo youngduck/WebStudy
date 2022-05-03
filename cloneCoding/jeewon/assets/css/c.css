@@ -1,0 +1,7 @@
+body{
+    top: 20vh;
+    height: 80vh;
+}
+svg{
+    transform: scale(1.5);
+}
