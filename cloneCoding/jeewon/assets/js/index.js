@@ -38,6 +38,8 @@ for(let i =0; i<img.length; i++){
 fk.addEventListener('mouseout',function(){
     for(let i =0; i<cc.length;i++){
         cc[i].style.height='20%'
+        cc[i].childNodes[3].style.display='none'
+        cc[i].childNodes[5].style.display='none' 
     }
 })
 
@@ -51,7 +53,7 @@ for (let i =0; i<cc.length; i++){
             }
             else{
                 cc[j].childNodes[3].style.display='none'
-                cc[j].childNodes[5].style.display=''    
+                cc[j].childNodes[5].style.display='none'    
             }
         }
     })

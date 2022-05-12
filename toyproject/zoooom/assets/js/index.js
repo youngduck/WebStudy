@@ -17,7 +17,7 @@ const loadItem =()=>{
 const makeBtn = ()=>{
     const name = $name.value
     const address = $address.value
-    let btnHtml=`<a href="${address} target='blank'>
+    let btnHtml=`<a href="${address}" target='blank'>
                     <button class="btn-item">${name}</button>
                 </a>` 
     num++

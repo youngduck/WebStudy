@@ -17,84 +17,87 @@ html {
 }
 
 .header {
-  background-color: orange;
+  background-color:#005600;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5vw;
+  z-index:100;
 }
 .box {
-  background-color: pink;
+  background-color: #FFF3D5;
+}
+svg {
+  stroke: black;
+  stroke-width: 3px;
 }
 .box svg {
-  transform: scale(1) translate(0px, 0px);
-  flex-direction: column;
+  transform: scale(1.2) translate(-5%, -8%);
   position: absolute;
-  align-items: center;
   width: 100%;
   height: 100%;
-  margin: -20px, -20px, -20px, -20px;
 }
 
-.gajuknamu {
-  fill: #ffffb5;
-}
-.gamnamu {
-  fill: #abdee6;
-}
-.suyangbudeul {
-  fill: #abdee6;
-}
-.yangbeozeumnamu {
-  fill: #fed592;
-}
-.chillyeopsu {
-  fill: #a2e1db;
-}
-.tulipnamu {
-  fill: #ffffb5;
-}
-.mongnyeon {
-  fill: #ff0071;
-}
-.metasequoia {
-  fill: #cbaacb;
-}
-.eundanpungnamu {
-  fill: #FF2358;
-}
-.eunhangnamu {
-  fill: #FFD500;
-   transition: 1s;
-}
-.eunhangnamu:hover {
-  fill: red;
-}
-.hwehwanamu {
-  fill: #55f4b5;
-}
 .sonamu {
-  fill: #97c1a9;
-}
-.mugunghwa {
-  fill: #55f4b5;
+  fill: #002d00;
 }
 .neutinamu {
-  fill: #55cbcd;
+  fill: #66e177;
+}
+.hwehwanamu {
+  fill: #007229;
+}
+.mongnyeon {
+  fill: #ffffff;
+}
+.eunhangnamu {
+  fill: #ffd500;
+  transition: all 10s;
+}
+.eunhangnamu:hover {
+  transform: rotate(180deg);
+  fill: black;
 }
 .wangbudnamu {
-  fill: #97c1a9;
+  fill: #ffd0e0;
+}
+.yangbeozeumnamu {
+  fill: #ffac04;
 }
 .ipapnamu {
-  fill: #55dae6;
+  fill: #e2feb4;
 }
-.nereupnamu {
-  fill: #ff7558;
+.tulipnamu {
+  fill: #fece6f;
 }
-.populusnamu {
-  fill: #ff0071;
+.eundanpungnamu {
+  fill: #ff2e00;
 }
 .salgunamu {
-  fill: #fee1e8;
+  fill: #ff6163;
+}
+.gamnamu {
+  fill: #ff5900;
+}
+.mugunghwa {
+  fill: #ff808d;
+}
+.populusnamu {
+  fill: #7d8737;
+}
+.metasequoia {
+  fill: #7e4d24;
+}
+.suyangbudeul {
+  fill: #b0eb53;
+}
+.chillyeopsu {
+  fill: #3f0000;
+}
+.nereupnamu {
+  fill: #651039;
+}
+.gajuknamu {
+  fill: #24d228;
 }
