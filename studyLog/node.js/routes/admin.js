@@ -37,12 +37,10 @@ router.get('/products',(req,res)=>{
     })
 })
 
+
+
 router.get('/products/write',(req,res)=>{
-    res.render('admin/write.html',{
-        hello:'hello!',
-        bye:'bye',
-        h1:`<h1>제목</h1>`
-    })
+    res.render('admin/write.html')
 })
 
 router.post('/products/write',(req,res)=>{
