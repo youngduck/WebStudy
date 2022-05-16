@@ -1,44 +1,39 @@
 body{
-    background-color: #a5e1b9;
+    background-color: teal;
 }
 
-.wrap{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0;
+.timer_wrap{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    width: 80vw;
+    height: 60vh;
+    background-color: white;
+    border-radius: 12px;
+    padding: 42px 30px;
+    box-shadow: 9px 9px #215d4c;
 }
 
-h2{
+.timer{
+    margin: 100px 0 0 0;
+    text-align: center;
     font-size: 3rem;
     font-weight: 900;
-    text-align: center;
-    padding: 2rem 0;
-    color: #1f6c38;
 }
-
-.posts{
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding:  0 3rem;
-}
-
-.post{
-    margin: 1rem 0;
-    background-color: rgba(255,255,255,0.8);
-    border-radius:0.5rem;
-    padding: 1rem;
-    border: 0.5rem;
-    border:0.5rem solid white;
-    box-shadow: 10px 14px 20px rgba(137,137,137,0.2);
-
-}
-.header{
+.buttons{
     display: flex;
-    font-size: 1.5rem;
-    color: #1f6c37;
-    font-weight: 700;
-    text-transform: uppercase;
+    margin: 20px 0 0 0;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.timer_button{
+    width: 30%;
+    height: 40px;
+    margin: 20px 1%;
+    border-radius: 8px;
+    font-size: 16px;
+    text-transform:uppercase;
 }
