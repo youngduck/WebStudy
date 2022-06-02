@@ -1,10 +1,11 @@
-import React,{useReducer,useMemo,} from 'react';
+import React,{useState,useReducer,useMemo,} from 'react';
 
 import UserList from './UserList'
 import CreateUser from './CreateUser';
 import produce from 'immer'
 import './App.scss'
 import Button from './components/Button'
+import CheckBox from './components/CheckBox';
 
 const countActiveUsers=(users)=>{
   console.log('활성 사용자 수를 세는중...')
@@ -65,13 +66,17 @@ function reducer(state,action){
 
 export const UserDispatch = React.createContext(null)
 
+
 function App() {
   const [state,dispatch] = useReducer(reducer,initialState)
-  
   const {users}=state;
   
- const count = useMemo(()=>countActiveUsers(users),[users])
-  
+  const count = useMemo(()=>countActiveUsers(users),[users])
+  const [check,setCheck]=useState(false);
+  const onChange = e=>{
+    setCheck(e.target.checked)
+  }
+ 
   return (
       <UserDispatch.Provider value = {dispatch}>
         <CreateUser />
@@ -99,6 +104,9 @@ function App() {
             <Button size={"small"} color={"blue"} outline fullwidth>BUTTON</Button>
           </div>
         </div>
+        <CheckBox onChange={onChange} checked={check} >
+          다음 약관에 모두 동의
+        </CheckBox>
       </UserDispatch.Provider>
 
   );
